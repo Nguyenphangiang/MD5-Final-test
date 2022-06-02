@@ -1,0 +1,25 @@
+<div class="container">
+  <form [formGroup]="bookForm" (ngSubmit)="addBook()">
+    <h1>Thêm sách mới</h1>
+    <div class="mb-3">
+      <label for="title">Tên</label>
+      <br>
+      <input type="text" formControlName="title" id="title" class="form-control-lg">
+    </div>
+    <div class="mb-3">
+      <label for="author">Tác Giả</label>
+      <br>
+      <input type="text" formControlName="author" id="author" class="form-control-lg">
+    </div>
+    <div class="mb-3">
+      <label for="description">Mô Tả</label>
+      <br>
+      <textarea formControlName="description" id="description" cols="30" rows="10"></textarea>
+    </div>
+    <div class="mb-3">
+      <button class="btn btn-primary">Thêm sách</button>
+      <a routerLink="/" class="btn btn-danger">Thoát</a>
+    </div>
+  </form>
+</div>
+

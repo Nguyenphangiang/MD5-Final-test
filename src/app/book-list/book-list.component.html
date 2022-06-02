@@ -1,0 +1,21 @@
+<h1>Danh sách các cuốn sách</h1>
+<h2><a routerLink="/add">Thêm mới sách</a></h2>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Tên Sách</th>
+    <th scope="col">Tác Giả</th>
+    <th colspan="2"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of books, index as i">
+    <th scope="row">{{i + 1}}</th>
+    <td><a [routerLink]="['/detail/',book.id]">{{book.title}}</a></td>
+    <td>{{book.author}}</td>
+    <td><a [routerLink]="['/update',book.id]" class="btn btn-warning">Sửa</a></td>
+    <td><a [routerLink]="['/delete',book.id]" class="btn btn-danger">Xóa</a></td>
+  </tr>
+  </tbody>
+</table>
