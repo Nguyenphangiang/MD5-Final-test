@@ -9,6 +9,7 @@ import {Book} from '../model/book';
 })
 export class BookListComponent implements OnInit {
   books: Book[] = [];
+  booksLength: number;
   constructor(private bookService: BookService) { }
 
   ngOnInit() {
@@ -17,6 +18,7 @@ export class BookListComponent implements OnInit {
   getAllBook() {
     this.bookService.showAllBook().subscribe((books) => {
       this.books = books;
+      this.booksLength = books.length;
     });
   }
 }
